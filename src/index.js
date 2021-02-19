@@ -16,12 +16,8 @@ app.set('views', path.join(__dirname, "resources/views"));
 app.use(morgan('combined'));
 
 //route
-app.get('/', (req, res) => {
-  res.render('home');
-})
-app.get('/about', (req, res) => {
-  res.render('about');
-})
+const route = require('./routes/index');
+route(app); //route init
 
 //open port 8080
 app.listen(port, () => {
