@@ -1,0 +1,21 @@
+h1 {
+  color: red; }
+
+.menu-list {
+  padding: 0px 10px; }
+
+.menu-topic {
+  font-size: bold; }
+
+.menu-item {
+  list-style: none;
+  color: #787878;
+  border: 1px #3333332e solid;
+  padding: 8px 25px; }
+
+.menu-link {
+  text-decoration: none;
+  display: block; }
+
+.menu-item:hover, .menu-link:hover {
+  color: red; }

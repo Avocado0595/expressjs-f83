@@ -1,4 +1,4 @@
-
+const Course = require('../models/Course');
 class SiteController {
 
     //[GET] /about
@@ -7,7 +7,11 @@ class SiteController {
     }
     // [GET] /
     index(req, res){
-        res.render('home');
+
+        Course.find({})
+            .then(courses=>res.render('home', courses))
+            .catch(error=>next(error));
+        //res.render('home');
     }
 
 

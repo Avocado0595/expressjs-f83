@@ -18,7 +18,9 @@ app.use(morgan('combined'));
 //route
 const route = require('./routes/index');
 route(app); //route init
-
+//connect to database
+const db = require('./config/db');
+db.connect();
 //open port 8080
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);

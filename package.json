@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "beauty":"node-sass src/resources/scss/app.scss src/public/css/app.css",
     "start": "nodemon --inspect src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,7 +12,9 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "express-handlebars": "^5.2.1"
+    "express-handlebars": "^5.2.1",
+    "mongoose": "^5.11.17",
+    "node-sass": "^5.0.0"
   },
   "devDependencies": {
     "morgan": "^1.10.0",
