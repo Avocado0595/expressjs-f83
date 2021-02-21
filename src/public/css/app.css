@@ -1,6 +1,25 @@
 h1 {
   color: red; }
 
+.dropdown-menu[data-bs-popper] {
+  left: -34px !important; }
+
+.default-link {
+  text-decoration: none;
+  color: black; }
+
+.p-15 {
+  font-size: 15px; }
+
+.mt-85 {
+  margin-top: 85px !important; }
+
+.mb-10 {
+  margin-bottom: 10px !important; }
+
+.menu {
+  margin-left: 25px; }
+
 .menu-list {
   padding: 0px 10px; }
 
@@ -14,7 +33,6 @@ h1 {
   padding: 8px 25px; }
 
 .menu-link {
-  text-decoration: none;
   display: block; }
 
 .menu-item:hover, .menu-link:hover {

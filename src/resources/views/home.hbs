@@ -1,23 +1,39 @@
 <div class="row">
-    <div class="col-xl-3">
+    <div class="d-none d-lg-block col-lg-3">
         <div class="menu">
             <h5 class="menu-topic">Front-end</h5>
             <ul class="menu-list">
-                <li class="menu-item"><a href="#" class="menu-link">HTML, CSS</a></li>
-                <li class="menu-item"><a href="#" class="menu-link">JavaScript</a></li>
+                <li class="menu-item"><a href="#" class="menu-link default-link">HTML, CSS</a></li>
+                <li class="menu-item"><a href="#" class="menu-link default-link">JavaScript</a></li>
             </ul>
         </div>
         <div class="menu">
             <h5 class="menu-topic">Back-end</h5>
             <ul class="menu-list">
-                <li class="menu-item"><a href="#" class="menu-link">NodeJS</a></li>
+                <li class="menu-item"><a href="#" class="menu-link default-link">NodeJS</a></li>
             </ul>
         </div>
         <div class="menu">
             <h5 class="menu-topic">DevOps</h5>
         </div>
     </div>
-    <div class="col-xl-9">
-        def
+    <div class="col-lg-9 row p-15">
+        {{#each courses}}
+        <div class="col-sm-6 col-lg-4">
+            <div class="card mb-10" style="width: 18rem;">
+                <a class="default-link" href="/courses/{{this.slug}}">
+                    <img src="https://img.youtube.com/vi/{{this.image}}/sddefault.jpg" class="card-img-top" alt="...">
+                    </a>               
+                <div class="card-body">
+                    <a class="default-link" href="/courses/{{this.slug}}">
+                    <h5 class="card-title">{{this.name}}</h5>
+
+                    </a>
+                    <p class="" class="card-text">{{this.description}}</p>
+                    <a href="/courses/{{this.slug}}" class="btn btn-primary">BẮT ĐẦU</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
     </div>
 </div>

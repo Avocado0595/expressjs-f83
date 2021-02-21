@@ -11,6 +11,10 @@ app.use(express.static(path.join(__dirname,'public')));
 app.engine('.hbs', exphbs({extname:'.hbs'}));
 app.set('view engine', '.hbs');
 app.set('views', path.join(__dirname, "resources/views"));
+//json
+app.use(express.json()) // for parsing application/json
+app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+
 
 //morgan
 app.use(morgan('combined'));
