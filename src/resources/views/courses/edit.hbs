@@ -1,0 +1,20 @@
+<h2>SỬA KHÓA HỌC</h2>
+<form method="POST" action="/courses/{{course._id}}?_method=PUT">
+  <div class="mb-3">
+    <label for="name" class="form-label">Tên khóa học</label>
+    <input name="name" type="text" class="form-control" id="name" value="{{course.name}}">
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Mô tả</label>
+    <textarea name="description" class="form-control" id="description">{{course.description}}</textarea>
+  </div>
+  <div class="mb-3">
+    <label for="video" class="form-label">Video</label>
+    <input name="video" type="text" class="form-control" id="video" value="{{course.video}}">
+  </div>
+  <div class="mb-3">
+    <label for="level" class="form-label">Level</label>
+    <input name="level" type="text" class="form-control" id="level" value="{{course.level}}">
+  </div>
+  <button type="submit" class="btn btn-primary">Lưu lại</button>
+</form>

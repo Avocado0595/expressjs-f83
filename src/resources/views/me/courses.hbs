@@ -1,0 +1,29 @@
+<h2>DANH SÁCH KHÓA HỌC</h2>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">STT</th>
+      <th scope="col">Tên khóa học</th>
+      <th scope="col">Mô tả</th>
+      <th scope="col">Trình độ</th>
+      <th scope="col">Link video</th>
+      <th scope="col">Ngày tạo</th>
+      <th scope="col">Ngày cập nhật</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each courses}}
+    <tr>
+      <th scope="row">{{index @index 1}}</th>
+      <td>{{this.name}}</td>
+      <td>{{this.description}}</td>
+      <td>{{this.level}}</td>
+      <td>{{this.video}}</td>
+      <td>{{this.createdAt}}</td>
+      <td>{{this.updatedAt}}</td>
+      <td><a href="/courses/{{this._id}}/edit" class="link-primary">Sửa</a></td>
+      <td><a href="#" class="link-primary">Xóa</a></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
