@@ -26,3 +26,4 @@ You can optionally provide an else section which will display only when the list
 <p class="empty">No content</p>
 {{/each}}
 ```
+<strong>Don't use arrow function with 'this' keyword</strong>
