@@ -6,17 +6,20 @@ const methodOverride = require('method-override');
 const app = express();
 const port = 8080;
 
+const sortMiddleware = require('./app/middlewares/sortMiddleware');
+app.use(sortMiddleware);
 //static file
 app.use(express.static(path.join(__dirname,'public')));
 //view engine
-app.engine('.hbs', exphbs({extname:'.hbs'}));
+
+app.engine('.hbs', exphbs({
+  extname: '.hbs',
+  helpers: require('./helpers/handlebars')
+}));
 app.set('view engine', '.hbs');
 app.set('views', path.join(__dirname, "resources/views"));
 //helper in view engine
-var hbs = exphbs.create({});
-hbs.handlebars.registerHelper('index', function (a,b) {
-  return a+b;
-})
+
 //overrride method
 
 app.use(methodOverride('_method'));

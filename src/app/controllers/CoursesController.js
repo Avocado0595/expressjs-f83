@@ -15,17 +15,18 @@ class CoursesController {
         res.render('courses/create');
     }
     //[POST] /courses/store
-    store(req, res, next) {
-        var formData = req.body;
-        formData.image = req.body.video;
-        var course = new Course(formData);
+    store(req, res, next) {       
+        req.body.image = req.body.video;
+        var course = new Course(req.body);
         course.save()
             .then(() => res.redirect('/'))
             .catch(next)
     }
     //[GET] /courses/mycourse
     mycourse(req, res, next) {
-        Promise.all([Course.find({}), Course.countDocumentsDeleted()])
+       
+
+        Promise.all([Course.find({}).sortable(req), Course.countDocumentsDeleted()])
             .then(([courses, countDeletedCourse])=>{
                 res.render('me/courses', { courses: multiMongooseToObj(courses), countDeletedCourse })
             })
@@ -68,6 +69,19 @@ class CoursesController {
         Course.deleteOne({ _id: req.params.id })
             .then(() => res.redirect('back'))
             .catch(next)
+    }
+
+     //[POST] /courses/handle-form-action
+    handleFormAction(req, res, next) {
+        switch(req.body.action){
+            case 'delete':
+                Course.delete({ _id: {$in: req.body.courseIds} })
+                    .then(() => res.redirect('back'))
+                    .catch(next)
+            break;
+            default:
+                res.json({message: 'Invalid action!'});
+        }
     }
 
 }

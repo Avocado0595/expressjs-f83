@@ -27,3 +27,29 @@ You can optionally provide an else section which will display only when the list
 {{/each}}
 ```
 <strong>Don't use arrow function with 'this' keyword</strong>
+
+note
+```javascript
+  checkAllSubmitBtn.click(function(e){
+      e.preventDefault();
+      var isSubmitable = $(this).hasClass('disabled');
+     if (!isSubmitable){
+        containerForm.submit();
+     }
+    })
+
+    //dùng object assign
+    //vd
+    res.locals._sort.enabled = true;
+    res.locals._sort.type = req.query.type;
+    res.locals._sort.col = req.query.col;
+    //tương đương với
+    Object.assign(res.locals._sort,{
+        enabled : true,
+        type : req.query.type,
+        col : req.query.col
+    })
+```
+```
+<a href="?_sort$column=name&type=asc></a>
+```
